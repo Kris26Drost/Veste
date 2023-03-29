@@ -1,0 +1,79 @@
+// INDEN import af BS - fordi vi leverer en farve til BS som dermed dropper sin default-farve
+$primary: hsl(0, 0, 14);
+$secondary: #e4e4e4;
+
+
+// tilføj en farve til theme-colors - ved at lave et map selv og mere det med BS theme-colors
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+// mine egne ekstra farver - i et map
+$my-theme-colors: (
+    "main": #a3c7bd,
+    "main2": #feeae3
+);
+
+$theme-colors: map-merge($my-theme-colors, $theme-colors);
+
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// FONT FAMILY
+
+@import url('https://fonts.googleapis.com/css2?family=Spinnaker&display=swap');
+
+body {
+    font-family: 'Spinnaker', sans-serif;
+}
+
+nav {
+    font-family: 'Spinnaker', sans-serif;
+} 
+
+.picture__text--pink {
+    background: #feeae3;
+}
+
+.side-pink {
+    background: #f7f3f2;
+}
+
+.picture__text--green {
+    background: #a3c7bd;
+}
+
+.side-green {
+    background: #d4e4e1;
+}
+
+.card-body {
+    background: #dfdfde;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.card_pic {
+    width: 300px;
+}
+
+
+@media (max-width: 768px) {
+    .card_pic {
+        padding: 0;
+        margin: 0;
+    }
+
+    .card_space {
+        display: none;
+    }
+}
+
+
+
+
